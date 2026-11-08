@@ -1,0 +1,11 @@
+title: "ZZZs26's Blog"
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+defaults:
+  - scope:
+      path: "notes"
+    values:
+      layout: article
+exclude:
+  - templates
