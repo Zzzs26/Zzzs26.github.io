@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title | escape }} | {{ site.title | escape }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/article.css' | relative_url }}">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]'],['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
+</head>
+<body><div class="container"><header><a class="logo" href="{{ '/' | relative_url }}">ZZZs26's Blog</a><nav aria-label="主导航"><a href="{{ '/' | relative_url }}#articles">文章</a><a href="{{ '/' | relative_url }}#tags">标签</a><a href="{{ '/' | relative_url }}#search">搜索</a><a href="{{ '/' | relative_url }}#about">关于</a></nav></header>
+<main><a class="back" href="{{ '/' | relative_url }}#articles">← 返回文章</a><article><h1>{{ page.title | escape }}</h1><p class="meta">{% if page.published_date %}发布于 {{ page.published_date | date: '%Y-%m-%d' }}{% endif %}{% if page.year %} · 论文年份 {{ page.year | escape }}{% endif %}{% if page.venue %} · {{ page.venue | escape }}{% endif %}</p><div class="prose">{{ content }}</div></article></main>
+<footer>© ZZZs26's Blog</footer></div></body></html>

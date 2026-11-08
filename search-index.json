@@ -1,0 +1,4 @@
+---
+layout: null
+---
+[{% assign separator = '' %}{% for item in site.pages %}{% assign section = '' %}{% if item.path contains 'notes/papers/' %}{% assign section = '论文阅读' %}{% elsif item.path contains 'notes/tech/' %}{% assign section = '技术笔记' %}{% elsif item.path contains 'notes/essays/' %}{% assign section = '思考与随笔' %}{% endif %}{% if section != '' and item.title and item.published_date %}{{ separator }}{"title":{{ item.title | jsonify }},"date":{{ item.published_date | date: '%Y-%m-%d' | jsonify }},"category":{{ section | jsonify }},"url":{{ item.url | relative_url | jsonify }},"authors":{{ item.authors | jsonify }},"venue":{{ item.venue | jsonify }},"tags":{{ item.tags | jsonify }},"content":{{ item.content | strip_html | normalize_whitespace | jsonify }}}{% assign separator = ',' %}{% endif %}{% endfor %}]
